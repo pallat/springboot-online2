@@ -23,4 +23,8 @@ public class EmployeeRepository {
         return entityManager.createQuery("select o from Employee o").getResultList(); // Employee คือชื่อ class, ภาษา JPA ไม่ใช่ SQL
         // หรือ entityManager.createQuery("from Employee").getResultList(); // Employee คือชื่อ class, ภาษา JPA ไม่ใช่ SQL
     }
+
+    public Employee findById(Integer id) {
+        return entityManager.find(Employee.class, id);
+    }
 }
