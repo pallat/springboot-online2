@@ -14,6 +14,8 @@ public class SpringbootOnline2Application {
 	public CommandLineRunner init(EmployeeRepository employeeRepository) {
 		return (args -> {
 			employeeRepository.save(new Employee("john","doe"));
+			employeeRepository.save(new Employee("sammy","doe"));
+			employeeRepository.save(new Employee("james","doe"));
 		});
 	}
 
