@@ -8,6 +8,8 @@ public class Employee {
     @Id @GeneratedValue
     @Column(name = "ID") private Integer id;
 
+    public Employee() {} // default constructor
+
     public Employee(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
