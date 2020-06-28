@@ -8,6 +8,11 @@ public class Employee {
     @Id @GeneratedValue
     @Column(name = "ID") private Integer id;
 
+    public Employee(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public Integer getId() {
         return id;
     }

@@ -13,10 +13,7 @@ public class SpringbootOnline2Application {
 	@Bean
 	public CommandLineRunner init(EmployeeRepository employeeRepository) {
 		return (args -> {
-			Employee employee = new Employee();
-			employee.setFirstName("john");
-			employee.setLastName("doe");
-			employeeRepository.save(employee);
+			employeeRepository.save(new Employee("john","doe"));
 		});
 	}
 
