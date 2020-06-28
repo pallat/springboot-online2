@@ -1,15 +1,18 @@
 package com.example.springbootonline2.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 public class HelloController {
 
-    @RequestMapping(value = "/hello")
-    @ResponseBody
-    public String sayHello() {
-        return "Hello world, welcome to spring boot.";
+    @RequestMapping(value = "/hello/{name}")
+    public String sayHello(@PathVariable String name) {
+        return "Hello " + name;
+    }
+
+    @RequestMapping(value = "/post", method = RequestMethod.POST)
+    public PostResponse sayHi(@RequestBody RequestPostBody request) {
+        System.out.println(request.message);
+        return new PostResponse(request.message);
     }
 }
